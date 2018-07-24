@@ -7,16 +7,17 @@ import android.util.Log;
 
 public class Alarm_Receiver extends BroadcastReceiver {
 
+    private static final String TAG = "Alarm_Receiver";
     @Override
     public void onReceive(Context context, Intent intent) {
         // an Intent broadcast.
 
-        Log.e("We are in the receiver","Yay!");
+        Log.e(TAG,"Yay!");
 
         //fetch extra string from intent
         String get_your_string = intent.getExtras().getString("extra");
 
-        Log.e("What is the key? ",get_your_string);
+        Log.e(TAG , get_your_string);
 
         //create an intent to the ringtone service
         Intent service_intent = new Intent(context,Ringtone.class);
